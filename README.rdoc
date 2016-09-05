@@ -3,7 +3,7 @@
 ## Install ##
 
 ```
-git clone https://github.com/sven199109/patients.git
+git clone https://github.com/wangboguo/patients.git
 cd patients
 bundle install
 ```
