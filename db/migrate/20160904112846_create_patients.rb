@@ -7,7 +7,7 @@ class CreatePatients < ActiveRecord::Migration
       t.string   :gender
       t.string   :status
       t.integer  :view_count, default: 0
-      t.boolean  :is_valid, default: 1
+      t.boolean  :is_valid, default: true
       t.string   :first_name
       t.string   :middle_name
       t.string   :last_name
