@@ -22,7 +22,7 @@ class PatientsController < ApplicationController
 	  @patient = Patient.new(patient_params)
 	
 	   if @patient.save
-	     redirect_to patients_path
+	     redirect_to patients_path, notice: "添加成功"
 	   else
 	     render :new
 	   end
@@ -38,7 +38,7 @@ class PatientsController < ApplicationController
 		@patient = Patient.find(params[:id])
 		  
 		if @patient.update(patient_params)
-			redirect_to patients_path
+			redirect_to patients_path, notice: "更新成功"
 		else
 		  render :edit
 		end
@@ -61,7 +61,7 @@ class PatientsController < ApplicationController
 	def marked_as_deleted
 		@patient = Patient.find(params[:id])
 		@patient.marked_as_deleted
-		redirect_to patients_path
+		redirect_to patients_path, alert: "删除成功"
 	end
 	
 	def on_treatment

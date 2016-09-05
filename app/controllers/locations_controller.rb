@@ -20,7 +20,7 @@ class LocationsController < ApplicationController
 	   @location = Location.new(location_params)
 
 	   if @location.save
-	     redirect_to locations_path
+	     redirect_to locations_path, notice: "添加地址成功"
 	   else
 	     render :new
 	   end
@@ -38,8 +38,8 @@ class LocationsController < ApplicationController
 
  def destroy
    @location = Location.find(params[:id])
-   @location.destroy
-   redirect_to locations_path, alert: "地址已刪除"
+  # @location.destroy
+   redirect_to locations_path, alert: "不好意思，暂时不能删除地址"
  end
 
 	  
