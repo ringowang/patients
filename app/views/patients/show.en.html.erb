@@ -1,0 +1,36 @@
+<%= link_to("Return to the Patient List", patients_path, class: "btn btn-primary pull-left") %>
+	<%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-TW" %>
+	<%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
+</div>
+
+<table class="table table-hover">
+		<thead>
+			<tr>
+				<td>Medical Record Number</td>
+				<td>Full Name</td>
+				<td>Age</td>
+				<td>Gender</td>
+				<td>Status</td>
+				<td>Location</td>
+				<td>Viewed Count</td>
+			</tr>
+		</thead>
+
+<tbody>
+	<tr>
+		<!--以下是html.erb中if语句的实现方法-->
+		<% if @Patient.id<10 %>
+		<td>MR00000<%= @Patient.id %></td>
+		<% else %>
+		<td>MR0000<%= @Patient.id %></td>
+		<% end %>
+		
+		<td><%= @Patient.full_name %></td>
+		<td><%= @Patient.age %></td>
+		<td><%= @Patient.gender %></td>
+		<td><%= @Patient.status %></td>
+		<td><%= @Patient.location %></td>
+		<td><%= @Patient.view_count %></td>
+
+	</tr>
+</tbody>

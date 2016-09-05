@@ -1,0 +1,73 @@
+<div class="col-md-12">
+
+	<div class="group">
+		<%= link_to("Add New Patient", new_patient_path, class: "btn btn-primary pull-right") %>
+		<%= link_to("Check for Locations", locations_path, class: "btn btn-primary pull-right") %>
+		
+		<%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-TW" %>
+		<%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
+		
+		
+		
+		<!--这一段还得好好看一下，不懂该如何只看onTreatment-->
+		<%= form_tag patients_path, method: :get do %>
+			<%= select_tag :status, options_for_select(['Initial', 'Referred', 'Treatment', 'Closed'],params[:status]) %>
+			<%= submit_tag("Just view patients on this status",class: "btn btn-primary pull-left") %>
+		<% end %>
+		
+		<%= form_tag(patients_path, method: "get") do %>
+			<%= submit_tag("View all Patients") %>
+		<% end %>
+
+			
+	</div>
+	
+	<table class="table table-hover">
+		<thead>
+			<tr>
+				<td>Full name</td>
+				<td>age</td>
+				<td>Medical Record number</td>
+				<td>Gender</td>
+				<td>Status</td>
+				<td>Location</td>
+				<td>Viewed Count</td>
+			</tr>
+		</thead>
+		<tbody>
+		
+			<% @patients.each do |patient| %>
+				<tr>
+
+					<td><%= patient.full_name %></td>
+					<td><%= patient.age %></td>
+					
+					<!--以下是html.erb中if语句的实现方法，完成编号-->
+					<% if patient.id<10 %>
+					<td>MR00000<%= patient.id %></td>
+					<% else %>
+					<td>MR0000<%= patient.id %></td>
+					<% end %>
+					
+					<td><%= patient.gender %></td>
+					<td><%= patient.status %></td>
+					
+					
+					<td><%= link_to patient.location.name , location_path(patient.location_id) %></td>
+					
+					
+					
+					
+					<td><%= patient.view_count %></td>
+					<td>
+							<%= link_to("Update", edit_patient_path(patient), class: "btn btn-sm btn-default")%>
+							<%= link_to("View", patient_path(patient), class: "btn btn-sm btn-default") %>
+							<%= button_to("Delete", marked_as_deleted_patient_path(patient), class: "btn btn-sm btn-default") %>
+							
+							
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

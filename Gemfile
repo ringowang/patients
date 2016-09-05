@@ -7,6 +7,7 @@ gem 'rmagick'
 gem 'bootstrap-sass'
 
 gem "simple_form"
+gem "rails-i18n"
 
 gem "devise", "~> 4.0.0 "
 
