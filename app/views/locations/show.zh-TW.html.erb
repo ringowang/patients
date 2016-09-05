@@ -1,20 +1,22 @@
 <div class="col-md-12">
 	<div class="location">
-		<%= link_to("Return to the List", patients_path, class: "btn btn-primary pull-right") %>
+		<%= link_to("返回病人列表", patients_path, class: "btn btn-primary pull-right") %>
+		<%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-TW" %>
+		<%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
+
 
 	</div>
 	
 	<table class="table table-hover">
 	<thead>
 		<tr>
-			<td>#</td>
-			<td>Full name</td>
-			<td>age</td>
-			<td>Medical Record number</td>
-			<td>Gender</td>
-			<td>Status</td>
-			<td>Location</td>
-			<td>Viewed Count</td>
+			<td>記錄編號</td>
+			<td>全名</td>
+			<td>年齡</td>
+			<td>性別</td>
+			<td>狀態</td>
+			<td>地址</td>
+			<td>查看次數</td>
 		</tr>
 	</thead>
 	
@@ -40,8 +42,8 @@
 					<td><%= patient.location_id %></td>
 					<td><%= patient.view_count %></td>
 					<td>
-						<%= link_to("Update", edit_patient_path(patient), class: "btn btn-sm btn-default")%>
-						<%= link_to("View", patient_path(patient), class: "btn btn-sm btn-default") %>
+						<%= link_to("更新", edit_patient_path(patient), class: "btn btn-sm btn-default")%>
+						<%= link_to("查看", patient_path(patient), class: "btn btn-sm btn-default") %>
 
 							<td><%= patient.content %></td>
 							

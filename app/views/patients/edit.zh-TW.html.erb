@@ -1,6 +1,7 @@
 <h1 class="text-center">修改病人信息</h1>
 <%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-TW" %>
 <%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
+<%= link_to("返回", patients_path, class: "btn btn-primary pull-right") %>
 
 <div class="col-md-4 col-md-offset-4">
 	<%= simple_form_for [@location,@patient] do |f| %>

@@ -1,14 +1,17 @@
 <div class="col-md-12">
+<%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-TW" %>
+<%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
+
 	<div class="location">
-		<%= link_to("New location", new_location_path, class: "btn btn-primary pull-right") %>
-		<%= link_to("Return to the List", patients_path, class: "btn btn-primary pull-right") %>
+		<%= link_to("添加新地址", new_location_path, class: "btn btn-primary pull-right") %>
+		<%= link_to("返回病人列表", patients_path, class: "btn btn-primary pull-right") %>
 	</div>
 	<table class="table table-hover">
 		<thead>
 			<tr>
 				<td>#</td>
-				<td>Location Name</td>
-				<td>Location Code</td>
+				<td>地址名</td>
+				<td>地址代码</td>
 			</tr>
 		</thead>
 		<tbody>
@@ -18,8 +21,8 @@
 					<td><%= link_to(location.name, location_path(location)) %></td>
 					<td><%= location.description %></td>
 					<td>
-							<%= link_to("Edit", edit_location_path(location), class: "btn btn-sm btn-default")%>
-							<%= link_to("Delete", location_path(location),    class: "btn btn-sm btn-default", 
+							<%= link_to("修改", edit_location_path(location), class: "btn btn-sm btn-default")%>
+							<%= link_to("删除", location_path(location),    class: "btn btn-sm btn-default", 
 													method: :delete, data: { confirm: "Are you sure?" } )%>
 					</td>
 				</tr>

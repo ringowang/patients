@@ -1,12 +1,16 @@
 <div class="col-md-4 col-md-offset-4">
-	<h1>添加地址</h1>
+	<h1>修改地址</h1>
+	<%= link_to "中文版", :controller => controller_name, :action => action_name, :locale => "zh-TW" %>
+	<%= link_to "English", :controller => controller_name, :action => action_name, :locale => "en" %>
+	<%= link_to("返回", locations_path, class: "btn btn-primary pull-right") %>
+
 
 	<hr>
 	<%= simple_form_for @location do |f| %>
 		<div class="form-location">
-			<%= f.input :name, input_html: { class: "form-control"} %>
-			<%= f.input :code, input_html: { class: "form-control"} %>
+			<%= f.input :name, label: '地址名',input_html: { class: "form-control"} %>
+			<%= f.input :code,label: '地址代码', input_html: { class: "form-control"} %>
 		</div>
-		<%= f.submit "Submit", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>
+		<%= f.submit "提交", class: "btn btn-primary", data: { disable_with: "Submitting..." } %>
 	<% end %>
 </div>
