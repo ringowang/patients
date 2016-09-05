@@ -22,8 +22,7 @@
 					<td><%= location.description %></td>
 					<td>
 							<%= link_to("Edit", edit_location_path(location), class: "btn btn-sm btn-default")%>
-							<%= link_to("Delete", location_path(location),    class: "btn btn-sm btn-default", 
-													method: :delete, data: { confirm: "Are you sure?" } )%>
+							<%= button_to("Destory", marked_as_deleted_location_path(location), class: "btn btn-sm btn-default") %>
 					</td>
 				</tr>
 			<% end %>

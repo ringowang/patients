@@ -2,7 +2,7 @@ class LocationsController < ApplicationController
 	before_action :set_location, only: [:show, :edit, :update, :destroy]
 
 	def index
-		@locations = Location.all 
+		@locations = Location.is_valid
 	end
 	
 	 def show
@@ -36,10 +36,10 @@ class LocationsController < ApplicationController
 	   end
  end
 
- def destroy
+ def marked_as_deleted
    @location = Location.find(params[:id])
-  # @location.destroy
-   redirect_to locations_path, alert: "不好意思，暂时不能删除地址"
+   @location.marked_as_deleted
+   redirect_to locations_path, alert: "删除成功"
  end
 
 	  

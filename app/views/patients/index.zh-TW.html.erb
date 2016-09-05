@@ -12,7 +12,7 @@
 		<!--这一段还得好好看一下，不懂该如何只看onTreatment-->
 		<%= form_tag patients_path, method: :get do %>
 			<%= select_tag :status, options_for_select(['初始', '轉診', '治療', '治療結束']) %>
-			<%= submit_tag("只看當前此狀態的病人",class: "btn btn-primary pull-left") %>
+			<%= submit_tag("只看當前此狀態下的病人",class: "btn btn-primary pull-left") %>
 		<% end %>
 		
 		<%= form_tag(patients_path, method: "get") do %>

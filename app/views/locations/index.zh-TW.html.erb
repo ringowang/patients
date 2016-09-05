@@ -22,8 +22,7 @@
 					<td><%= location.description %></td>
 					<td>
 							<%= link_to("修改", edit_location_path(location), class: "btn btn-sm btn-default")%>
-							<%= link_to("删除", location_path(location),    class: "btn btn-sm btn-default", 
-													method: :delete, data: { confirm: "Are you sure?" } )%>
+							<%= button_to("刪除", marked_as_deleted_location_path(location), class: "btn btn-sm btn-default") %>
 					</td>
 				</tr>
 			<% end %>

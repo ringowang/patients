@@ -60,7 +60,11 @@ Rails.application.routes.draw do
 
   root 'patients#index'
   
-   resources :locations
+   resources :locations do
+      member do
+        post 'marked_as_deleted'
+      end
+   end
 
       resources :patients do
         member do
