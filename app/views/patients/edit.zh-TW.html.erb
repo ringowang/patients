@@ -6,9 +6,9 @@
 <div class="col-md-4 col-md-offset-4">
 	<%= simple_form_for [@location,@patient] do |f| %>
 		<div class="form-group">
-			<%= f.input :first_name, label: '名',input_html: { class: "form-control"} %>
+			<%= f.input :first_name, label: '名（必填）',input_html: { class: "form-control"} %>
 			<%= f.input :middle_name, label: '中間名',input_html: { class: "form-control"} %>
-			<%= f.input :last_name, label: '姓',input_html: { class: "form-control"} %>
+			<%= f.input :last_name, label: '姓（必填）',input_html: { class: "form-control"} %>
 			<h5>出生日期<h5>
 			<%= f.date_select :date_of_birth, start_year: 1900 %>
 			
@@ -20,15 +20,15 @@
 			:as => :radio_buttons %>
 			
 			<!--simple form添加下拉菜单的方式，状态选择 -->
-			<h5>* 當前狀態<h5>
+			<h5>* 當前狀態（必填）<h5>
 			<%= f.collection_select :status,  ['Initial','Referred','Treatment','Closed'], :to_s, :to_s, :include_blank => true%>
 			
 			<!--simple form添加下拉菜单的方式，状态选择 -->
 			</div>
 				<div class="field">
-				<%= f.label :location_id, t('* 地址') %><br>
+				<%= f.label :location_id, t('* 地址（必填）') %><br>
 				<%= f.select :location_id,
-						 options_from_collection_for_select(Location.is_valid, 'id', 'name'), {:include_blank => t('form.plz_select')}, {:class => ''} rescue ''%>
+						 options_from_collection_for_select(Location.is_valid, 'id', 'name'), {:include_blank => t('form. ')}, {:class => ''} rescue ''%>
 			</div>
 			
 			
