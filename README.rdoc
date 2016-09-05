@@ -1,28 +1,24 @@
-== README
+# Patients #
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Install ##
 
-Things you may want to cover:
+```
+git clone https://github.com/sven199109/patients.git
+cd patients
+bundle install
+```
 
-* Ruby version
+## Run ##
 
-* System dependencies
+```
+rails s
+```
 
-* Configuration
+Then, open your browser to view it at `http://your_host_or_ip_address:3000` (localhost:3000)
 
-* Database creation
+## Run Test ##
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+```
+cd patients
+bundle exec rspec spec
+```
