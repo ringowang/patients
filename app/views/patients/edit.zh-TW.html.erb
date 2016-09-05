@@ -21,7 +21,7 @@
 			
 			<!--simple form添加下拉菜单的方式，状态选择 -->
 			<h5>* 當前狀態<h5>
-			<%= f.collection_select :status,  ['初始', '轉診', '治療', '治療結束'], :to_s, :to_s, :include_blank => true%>
+			<%= f.collection_select :status,  ['Initial','Referred','Treatment','Closed'], :to_s, :to_s, :include_blank => true%>
 			
 			<!--simple form添加下拉菜单的方式，状态选择 -->
 			</div>
