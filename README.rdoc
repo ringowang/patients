@@ -2,23 +2,19 @@
 
 ## Install ##
 
-```
 git clone https://github.com/wangboguo/patients.git
 cd patients
 bundle install
-```
 
 ## Run ##
 
-```
+rake db:migrate
+rake db:seed(create two locations: 'Test location 1' and 'Test location 2' )
 rails s
-```
-
 Then, open your browser to view it at `http://your_host_or_ip_address:3000` (localhost:3000)
 
 ## Run Test ##
 
-```
 cd patients
 bundle exec rspec spec
-```
+
