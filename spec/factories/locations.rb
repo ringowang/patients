@@ -4,6 +4,7 @@ FactoryGirl.define do
     name "Test location 1"
     code "85447454"
   end
+  
 
   factory :location_invalid, class: "Location" do 
     name ""
@@ -14,4 +15,5 @@ FactoryGirl.define do
     name "a" * 81
     code "b" * 11
   end
+  
 end
