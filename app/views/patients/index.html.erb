@@ -37,9 +37,7 @@
 		
 			<% @patients.each do |patient| %>
 				<tr>
-					<td>#</td>
-	
-					 
+
 					<td><%= patient.full_name %></td>
 					<td><%= patient.age %></td>
 					
@@ -52,8 +50,13 @@
 					
 					<td><%= patient.gender %></td>
 					<td><%= patient.status %></td>
-					<td><%= link_to(patient.location.name, location_path(patient.location_id), class: "btn btn-sm btn-default")%></td>
-
+					
+					
+					<td><%= link_to patient.location.name , location_path(patient.location_id) %></td>
+					
+					
+					
+					
 					<td><%= patient.view_count %></td>
 					<td>
 							<%= link_to("Update", edit_patient_path(patient), class: "btn btn-sm btn-default")%>

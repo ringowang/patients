@@ -1,4 +1,6 @@
 class PatientsController < ApplicationController
+ 	before_action :set_patient, only: [:show, :edit, :update, :destroy]
+
 	def index
 	#只看的到标记为有效的（未删除的）
 		@patients = Patient.is_valid
@@ -68,7 +70,11 @@ class PatientsController < ApplicationController
 	
 
 	 private
-	 
+	
+	def set_patient
+		@patient = Patient.find(params[:id])
+	end
+
 	 def patient_params 
 	   params.require(:patient).permit(:name, :gender, :status, :first_name, :middle_name, :last_name, :date_of_birth,:location_id)
 	 end
